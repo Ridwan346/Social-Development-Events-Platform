@@ -4,6 +4,7 @@ import leaf1 from '../assets/sarah-dorweiler-x2Tmfd1-SgA-unsplash.jpg'
 import creation from '../assets/creation.jpg'
 import discation from '../assets/discation.jpg'
 import discovary from '../assets/discovary.jpg'
+import Gallery from '../assets/Gallary/Gallery';
 
 const Home = () => {
     return (
@@ -42,6 +43,7 @@ const Home = () => {
             <p>"Easily set up your social <br /> development events with all the <br /> details – date, time, location, <br /> and description. Track registrations, manage attendees, <br /> and keep your community engaged, all from a simple and intuitive dashboard."</p></div>
         </div>
       </div>
+      <Gallery></Gallery>
     </div>
     );
 };
