@@ -43,7 +43,31 @@ const Home = () => {
             <p>"Easily set up your social <br /> development events with all the <br /> details – date, time, location, <br /> and description. Track registrations, manage attendees, <br /> and keep your community engaged, all from a simple and intuitive dashboard."</p></div>
         </div>
       </div>
-      <Gallery></Gallery>
+      <div className='mt-5'><Gallery></Gallery></div>
+      <div className='flex justify-between items-center p-2.5 mt-2 border rounded-xl '>
+            <div>
+                <h2 className='flex justitfy-start text-green-800 text-xl'>Subscribe to our Newsletter</h2>
+                <p>Get latest event updates and other directly in your inbox.</p>
+            </div>
+            <div>
+                {/* Open the modal using document.getElementById('ID').showModal() method */}
+           <button className="btn" onClick={()=>document.getElementById('my_modal_1').showModal()}>Subscribe</button>
+          <dialog id="my_modal_1" className="modal">
+           <div className="modal-box">
+              <form>
+            <input className="input" type="email" placeholder="Enter your email" />
+              <button className='btn'>Subscribe</button>
+             </form>
+             <div className="modal-action">
+             <form method="dialog">
+           {/* if there is a button in form, it will close the modal */}
+             <button className="btn">Close</button>
+             </form>
+         </div>
+         </div>
+         </dialog>
+            </div>
+           </div>
     </div>
     );
 };
