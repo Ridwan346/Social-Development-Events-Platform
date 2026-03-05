@@ -29,11 +29,11 @@ const Nav = () => {
                     </div>
                     <ul
                         tabIndex="-1"
-                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow" >
                         {link}
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl">SDEP</a>
+                <a className="btn btn-ghost text-green-800 text-xl font-bold text- drop-shadow-lg" title='Social Development Events Platform'>SDEP</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal gap-5 px-1">

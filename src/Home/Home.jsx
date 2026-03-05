@@ -27,18 +27,18 @@ const Home = () => {
       <h1 className="text-green-800 m-7 text-4xl font-bold text- drop-shadow-lg">Our Features</h1>
       <div>
         <div className='flex justify-around items-center mt-5'>
-            <div><img className='h-[300px] w-[700px]' src={creation} alt="" /></div>
+            <div><img className='h-[300px] w-[700px] object-cover transform hover:scale-105 transition duration-300' src={creation} alt="" /></div>
             <div> <h1 className="text-green-800 text-2xl font-bold text- drop-shadow-lg">Event Creation & Management</h1>
             <p>"Easily set up your social <br /> development events with all the <br /> details – date, time, location, <br /> and description. Track registrations, manage attendees, <br /> and keep your community engaged, all from a simple and intuitive dashboard."</p></div>
         </div>
         <div className='flex justify-around items-center mt-5'>
             <div> <h1 className="text-green-800 text-2xl font-bold text- drop-shadow-lg">Discussion & Collaboration</h1>
             <p>"Easily set up your social <br /> development events with all the <br /> details – date, time, location, <br /> and description. Track registrations, manage attendees, <br /> and keep your community engaged, all from a simple and intuitive dashboard."</p></div>
-            <div><img className='h-[300px] w-[700px]' src={discation} alt="" /></div>
+            <div><img className='h-[300px] w-[700px] object-cover transform hover:scale-105 transition duration-300' src={discation} alt="" /></div>
             
         </div>
         <div className='flex justify-around items-center mt-5'>
-            <div><img className='h-[300px] w-[700px]' src={discovary} alt="" /></div>
+            <div><img className='h-[300px] w-[700px] object-cover transform hover:scale-105 transition duration-300' src={discovary} alt="" /></div>
             <div> <h1 className="text-green-800 text-2xl font-bold text- drop-shadow-lg">Event Discovery & Search</h1>
             <p>"Easily set up your social <br /> development events with all the <br /> details – date, time, location, <br /> and description. Track registrations, manage attendees, <br /> and keep your community engaged, all from a simple and intuitive dashboard."</p></div>
         </div>
