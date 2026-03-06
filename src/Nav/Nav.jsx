@@ -9,7 +9,7 @@ const Nav = () => {
         <NavLink to={'/regi'}>Register</NavLink>
         <NavLink to={'/upcoming'}>Upcoming Events</NavLink>
         <NavLink to={'/creat'}>Creat an Events</NavLink>
-    
+        <NavLink to={"/Manageevent"}>Event Manage</NavLink>
     </>
     const handleLogout = () => {
     logOut()

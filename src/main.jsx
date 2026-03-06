@@ -15,6 +15,7 @@ import Upcoming from './assets/LoginAndRegistrtion/Event/Upcoming.jsx';
 import EventDetail from './assets/LoginAndRegistrtion/Event/EventDetail.jsx';
 import JointEvent from './assets/LoginAndRegistrtion/Event/JointEvent.jsx';
 import JoingList from './assets/LoginAndRegistrtion/Event/JoingList.jsx';
+import ManageEvents from './assets/LoginAndRegistrtion/Event/ManageEvent.jsx';
 
 const router = createBrowserRouter([
   {
@@ -60,6 +61,9 @@ const router = createBrowserRouter([
             <JoingList></JoingList>
           </PrivateRoute>
         )
+      },{
+        path:'Manageevent',
+        Component:ManageEvents
       }
     ]}]);
 
