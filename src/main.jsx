@@ -14,6 +14,7 @@ import PrivateRoute from './Contest/Private.jsx';
 import Upcoming from './assets/LoginAndRegistrtion/Event/Upcoming.jsx';
 import EventDetail from './assets/LoginAndRegistrtion/Event/EventDetail.jsx';
 import JointEvent from './assets/LoginAndRegistrtion/Event/JointEvent.jsx';
+import JoingList from './assets/LoginAndRegistrtion/Event/JoingList.jsx';
 
 const router = createBrowserRouter([
   {
@@ -52,9 +53,15 @@ const router = createBrowserRouter([
           </PrivateRoute>
         )
       }
-    ]
-  },
-]);
+      ,{
+        path:'jonitingList',
+        element:(
+          <PrivateRoute>
+            <JoingList></JoingList>
+          </PrivateRoute>
+        )
+      }
+    ]}]);
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>

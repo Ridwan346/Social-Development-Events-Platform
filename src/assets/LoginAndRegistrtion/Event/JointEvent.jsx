@@ -1,27 +1,37 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../../Contest/ContestApi';
-import { useParams } from 'react-router';
+import { NavLink, useParams } from 'react-router';
 
 const JointEvent = () => {
     const { id } = useParams();
     let { user } = useContext(AuthContext)
     console.log(user)
+    const [event, setEvent] = useState({});
+
+    useEffect(() => {
+        fetch(`http://localhost:5000/events/${id}`)
+            .then(res => res.json())
+            .then(data => setEvent(data))
+    }, [id])
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        const newEvent = {
-             eventId: id,
-            name: user?.displayName,
-            email: user?.emai
-           
+        const newEvent = {  
+        eventId: id,
+        title: event.title,
+        date: event.date,
+        thumbnail: event.thumbnail,
+        location: event.location,
+        name: user?.displayName,
+        email: user?.email    
         };
 
         console.log(newEvent);
        
 
         // Send to backend
-        fetch("http://localhost:5000/events", {
+        fetch("http://localhost:5000/events/participate", {
             method: "POST",
             headers: {
                 "content-type": "application/json",
@@ -48,6 +58,7 @@ const JointEvent = () => {
                             <input defaultValue={user?.email} type="email" className="input" placeholder="Email" />
 
                             <button className="btn btn-neutral mt-4">Join Now</button>
+                            <NavLink to={'/jonitingList'}> <button className="btn btn-neutral mt-4">See your Joining List</button></NavLink>
                         </fieldset>
                     </form>
                 </div></div></div>
