@@ -11,6 +11,7 @@ import AuthProvider from './Contest/ContestApi.jsx';
 import Registretion from './assets/LoginAndRegistrtion/Registration.jsx';
 import Createvent from './assets/LoginAndRegistrtion/Event/Createvent.jsx';
 import PrivateRoute from './Contest/Private.jsx';
+import Upcoming from './assets/LoginAndRegistrtion/Event/Upcoming.jsx';
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,9 @@ const router = createBrowserRouter([
             <Createvent />
           </PrivateRoute>
         )
+      },{
+        path:"upcoming",
+        Component:Upcoming
       }
     ]
   },

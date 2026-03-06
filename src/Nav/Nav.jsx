@@ -7,7 +7,7 @@ const Nav = () => {
     let link = <>
         <NavLink to={'/'}>Home</NavLink>
         <NavLink to={'/regi'}>Register</NavLink>
-        <NavLink to={'/'}>Upcoming Events</NavLink>
+        <NavLink to={'/upcoming'}>Upcoming Events</NavLink>
         <NavLink to={'/creat'}>Creat an Events</NavLink>
 
     </>

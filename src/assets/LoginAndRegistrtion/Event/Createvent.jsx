@@ -1,11 +1,9 @@
 import React, { useContext, useState } from 'react';
 import { AuthContext } from '../../../Contest/ContestApi';
-import { useNavigate } from 'react-router';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 const Createvent = () => {
-    const { user } = useContext(AuthContext);
-  const navigate = useNavigate();
+  const { user } = useContext(AuthContext);
 
   const [startDate, setStartDate] = useState(null);
 
@@ -25,6 +23,11 @@ const Createvent = () => {
     };
 
     console.log(newEvent);
+    //date check
+    if (!startDate) {
+      alert("Please select a date");
+      return;
+    }
 
     // Send to backend
     fetch("http://localhost:5000/events", {
@@ -38,57 +41,56 @@ const Createvent = () => {
       .then((data) => {
         if (data.insertedId) {
           alert("Event Created Successfully!");
-          navigate("/upcoming-events");
         }
       });
   };
 
   return (
     <div className=''>
-        <h2 className=' text-green-800 text-xl font-bold text- drop-shadow-lg'>Create Event</h2>
-         <div className='flex items-center justify-center hero bg-base-200 '>
-      <form onSubmit={handleSubmit}>
-        <fieldset className="fieldset gap-3 bg-base-200 border-base-300 rounded-box w-xs border p-4">
-        <input type="text" name="title" placeholder="Event Title" required />
-         <br />
-        <textarea
-          name="description"
-          placeholder="Event Description"
-          required
-        ></textarea>
-        <br />
-        <select name="eventType" required>
-          <option value="">Select Event Type</option>
-          <option value="Cleanup">Cleanup</option>
-          <option value="Plantation">Plantation</option>
-          <option value="Donation">Donation</option>
-        </select>
-         <br />
-        <input
-          type="text"
-          name="thumbnail"
-          placeholder="Thumbnail Image URL"
-          required
-        />
-         <br />
-        <input type="text" name="location" placeholder="Location" required />
-        <br />
-        {/* Date Picker */}
-        <DatePicker
-          selected={startDate}
-          onChange={(date) => setStartDate(date)}
-          minDate={new Date()} // ❗ Prevent Past Date
-          placeholderText="Select Event Date"
-          required
-        />
-        <br />
-        <button type="submit">Create Event</button>
-        </fieldset>
-      </form>
+      <h2 className=' text-green-800 text-xl font-bold text- drop-shadow-lg'>Create Event</h2>
+      <div className='flex items-center justify-center hero bg-base-200 '>
+        <form onSubmit={handleSubmit}>
+          <fieldset className="fieldset gap-3 bg-base-200 border-base-300 rounded-box w-xs border p-4">
+            <input type="text" name="title" placeholder="Event Title" required />
+            <br />
+            <textarea
+              name="description"
+              placeholder="Event Description"
+              required
+            ></textarea>
+            <br />
+            <select name="eventType" required>
+              <option value="">Select Event Type</option>
+              <option value="Cleanup">Cleanup</option>
+              <option value="Plantation">Plantation</option>
+              <option value="Donation">Donation</option>
+            </select>
+            <br />
+            <input
+              type="text"
+              name="thumbnail"
+              placeholder="Thumbnail Image URL"
+              required
+            />
+            <br />
+            <input type="text" name="location" placeholder="Location" required />
+            <br />
+            {/* Date Picker */}
+            <DatePicker
+              selected={startDate}
+
+              onChange={(date) => setStartDate(date)}
+              minDate={new Date()} // ❗ Prevent Past Date
+              placeholderText="Select Event Date"
+            />
+            <br />
+            <button className='border-2' type="submit">Create Event</button>
+          </fieldset>
+        </form>
+      </div>
     </div>
-    </div>
-    
-   
+
+
   );
 };
 
