@@ -16,6 +16,7 @@ import EventDetail from './assets/LoginAndRegistrtion/Event/EventDetail.jsx';
 import JointEvent from './assets/LoginAndRegistrtion/Event/JointEvent.jsx';
 import JoingList from './assets/LoginAndRegistrtion/Event/JoingList.jsx';
 import ManageEvents from './assets/LoginAndRegistrtion/Event/ManageEvent.jsx';
+import UpdateEvent from './assets/LoginAndRegistrtion/Event/UpdateEvent.jsx';
 
 const router = createBrowserRouter([
   {
@@ -64,6 +65,9 @@ const router = createBrowserRouter([
       },{
         path:'Manageevent',
         Component:ManageEvents
+      },{
+        path:"Update/:id",
+        Component:UpdateEvent
       }
     ]}]);
 

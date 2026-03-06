@@ -1,10 +1,11 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../../Contest/ContestApi";
+import { Navigate, useNavigate } from "react-router";
 
 const ManageEvents = () => {
   const { user } = useContext(AuthContext);
   const [events, setEvents] = useState([]);
-
+  const navigate = useNavigate();
   useEffect(() => {
     if (user?.email) {
       fetch(`http://localhost:5000/myEvents/${user.email}`)
@@ -14,6 +15,7 @@ const ManageEvents = () => {
   }, [user]);
 
   const handleUpdate = (id) => {
+    navigate(`/Update/${id}`)
     console.log(id)
   };
 
