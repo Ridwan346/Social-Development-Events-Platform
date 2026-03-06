@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { AuthContext } from '../../../Contest/ContestApi';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import Swal from 'sweetalert2';
 const Createvent = () => {
   const { user } = useContext(AuthContext);
 
@@ -25,7 +26,7 @@ const Createvent = () => {
     console.log(newEvent);
     //date check
     if (!startDate) {
-      alert("Please select a date");
+      Swal.fire("Please select a date");
       return;
     }
 
@@ -40,7 +41,8 @@ const Createvent = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.insertedId) {
-          alert("Event Created Successfully!");
+          Swal.fire("Event Created Successfully!");
+          form.reset()
         }
       });
   };

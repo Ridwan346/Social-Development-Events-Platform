@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../../Contest/ContestApi';
 import { NavLink, useParams } from 'react-router';
+import Swal from 'sweetalert2';
 
 const JointEvent = () => {
     const { id } = useParams();
@@ -41,7 +42,7 @@ const JointEvent = () => {
             .then((res) => res.json())
             .then((data) => {
                 if (data.insertedId) {
-                    alert("Event Created Successfully!");
+                    Swal.fire("You join succsessfully");
                 }
             });
     };
