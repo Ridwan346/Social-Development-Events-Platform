@@ -44,9 +44,9 @@ const Createvent = () => {
   };
 
   return (
-    <div>
-        <h2>Create Event</h2>
-         <div className='flex items-center justify-center'>
+    <div className=''>
+        <h2 className=' text-green-800 text-xl font-bold text- drop-shadow-lg'>Create Event</h2>
+         <div className='flex items-center justify-center hero bg-base-200 '>
       <form onSubmit={handleSubmit}>
         <fieldset className="fieldset gap-3 bg-base-200 border-base-300 rounded-box w-xs border p-4">
         <input type="text" name="title" placeholder="Event Title" required />
