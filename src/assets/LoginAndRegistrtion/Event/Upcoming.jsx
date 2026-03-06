@@ -16,11 +16,13 @@ const Upcoming = () => {
          <div>
       <h2>All Events</h2>
 
-      {
+    <div className='grid grid-cols-3'>
+          {
         events.map(event => (
            <SingleCard key={event._id} event={event} />
         ))
       }
+    </div>
 
     </div>
     );
