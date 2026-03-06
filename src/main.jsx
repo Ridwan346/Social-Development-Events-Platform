@@ -12,6 +12,8 @@ import Registretion from './assets/LoginAndRegistrtion/Registration.jsx';
 import Createvent from './assets/LoginAndRegistrtion/Event/Createvent.jsx';
 import PrivateRoute from './Contest/Private.jsx';
 import Upcoming from './assets/LoginAndRegistrtion/Event/Upcoming.jsx';
+import EventDetail from './assets/LoginAndRegistrtion/Event/EventDetail.jsx';
+import JointEvent from './assets/LoginAndRegistrtion/Event/JointEvent.jsx';
 
 const router = createBrowserRouter([
   {
@@ -38,6 +40,17 @@ const router = createBrowserRouter([
       },{
         path:"upcoming",
         Component:Upcoming
+      },{
+        path:"eventDetai/:id",
+        loader:({ params })=>fetch(`http://localhost:5000/events/${params.id}`),
+        Component:EventDetail 
+      },{
+        path:'jonitEvent',
+        element:(
+          <PrivateRoute>
+            <JointEvent></JointEvent>
+          </PrivateRoute>
+        )
       }
     ]
   },

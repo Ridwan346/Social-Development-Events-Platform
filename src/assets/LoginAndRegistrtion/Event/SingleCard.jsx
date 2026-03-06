@@ -1,7 +1,8 @@
 import React from 'react';
+import { NavLink } from 'react-router';
 
 const SingleCard = ({ event }) => {
-    const { title, date ,thumbnail} = event
+    const { title, date ,thumbnail,_id} = event
     const today = new Date();
     today.setHours(0, 0, 0, 0);
     const eventDate = new Date(date)
@@ -28,8 +29,9 @@ const SingleCard = ({ event }) => {
                 </h2>
                 <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
                 <div className="bg-white p-6">
-                    <button className="btn btn-neutral btn-outline">Join event</button>
-                    <button className="btn btn-neutral btn-outline">Event details</button>
+                    <NavLink to={'/jonitEvent'}> <button className="btn btn-neutral btn-outline">Join event</button></NavLink>
+                    
+                    <NavLink to={`/eventDetai/${_id}`}> <button className="btn btn-neutral btn-outline">Event details</button></NavLink>    
                 </div>
             </div>
         </div>
