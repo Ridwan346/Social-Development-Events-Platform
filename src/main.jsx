@@ -45,7 +45,7 @@ const router = createBrowserRouter([
         loader:({ params })=>fetch(`http://localhost:5000/events/${params.id}`),
         Component:EventDetail 
       },{
-        path:'jonitEvent',
+        path:'jonitEvent/:id',
         element:(
           <PrivateRoute>
             <JointEvent></JointEvent>

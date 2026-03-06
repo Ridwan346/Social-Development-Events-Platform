@@ -29,7 +29,7 @@ const SingleCard = ({ event }) => {
                 </h2>
                 <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
                 <div className="bg-white p-6">
-                    <NavLink to={'/jonitEvent'}> <button className="btn btn-neutral btn-outline">Join event</button></NavLink>
+                    <NavLink to={`/jonitEvent/${_id}`}> <button className="btn btn-neutral btn-outline">Join event</button></NavLink>
                     
                     <NavLink to={`/eventDetai/${_id}`}> <button className="btn btn-neutral btn-outline">Event details</button></NavLink>    
                 </div>
