@@ -64,10 +64,18 @@ const router = createBrowserRouter([
         )
       },{
         path:'Manageevent',
-        Component:ManageEvents
+        element:(
+          <PrivateRoute>
+            <ManageEvents></ManageEvents>
+          </PrivateRoute>
+        )
       },{
         path:"Update/:id",
-        Component:UpdateEvent
+        element:(
+          <PrivateRoute>
+            <UpdateEvent></UpdateEvent>
+          </PrivateRoute>
+        )
       }
     ]}]);
 

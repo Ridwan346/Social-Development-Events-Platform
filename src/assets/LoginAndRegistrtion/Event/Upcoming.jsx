@@ -14,7 +14,7 @@ const Upcoming = () => {
 
     return (
          <div>
-      <h2>All Events</h2>
+      <h2 className="text-green-800 m-7 text-4xl font-bold text- drop-shadow-lg">All Events</h2>
 
     <div className='grid grid-cols-3'>
           {

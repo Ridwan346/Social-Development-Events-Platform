@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { AuthContext } from '../../Contest/ContestApi';
-import { useLocation, useNavigate } from 'react-router';
+import { NavLink, useLocation, useNavigate } from 'react-router';
 
 const Registretion = () => {
     let { createUser, googleLogin, updateUserProfile } = useContext(AuthContext)
@@ -58,7 +58,7 @@ const Registretion = () => {
                             <input name='email' type="email" className="input" placeholder="Email" />
                             <label className="label">Password</label>
                             <input name='password' type="password" className="input" placeholder="Password" />
-                            <div><a className="link link-hover">Forgot password?</a></div>
+                            <div><a className="link link-hover">Already have an account? <NavLink to={'/login'}>Login</NavLink></a></div>
                             {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
                             {success && <p className="text-green-500 text-sm mt-2">{success}</p>}
                             <button className="btn btn-neutral mt-4">Registration</button>

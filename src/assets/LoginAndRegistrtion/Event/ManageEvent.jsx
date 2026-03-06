@@ -34,7 +34,7 @@ const ManageEvents = () => {
 
   return (
     <div>
-      <h2 className="text-3xl font-bold text-center mb-4">
+      <h2 className="text-green-800 m-7 text-4xl font-bold text- drop-shadow-lg">
         My Created Events
       </h2>
 
