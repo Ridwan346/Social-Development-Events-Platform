@@ -1,6 +1,8 @@
 import React, { useContext } from 'react';
 import { NavLink } from 'react-router';
 import { AuthContext } from '../Contest/ContestApi';
+import ThemeToggle from './ThemeToggle';
+import ThemeToggles from './FreeMotion';
 
 const Nav = () => {
     let { user, logOut } = useContext(AuthContext)
@@ -10,6 +12,7 @@ const Nav = () => {
         <NavLink to={'/upcoming'}>Upcoming Events</NavLink>
         <NavLink to={'/creat'}>Creat an Events</NavLink>
         <NavLink to={"/Manageevent"}>Event Manage</NavLink>
+        
     </>
     const handleLogout = () => {
     logOut()
@@ -34,6 +37,7 @@ return (
                 </ul>
             </div>
             <a className="btn btn-ghost text-green-800 text-xl font-bold text- drop-shadow-lg" title='Social Development Events Platform'>SDEP</a>
+            
         </div>
         <div className="navbar-center hidden lg:flex">
             <ul className="menu menu-horizontal gap-5 px-1">
@@ -42,6 +46,8 @@ return (
         </div>
 
         <div className="navbar-end">
+            <ThemeToggles></ThemeToggles>
+            
             {user ? (
                 <button className="btn" onClick={handleLogout}>
                     Logout
