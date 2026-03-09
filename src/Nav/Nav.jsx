@@ -3,12 +3,12 @@ import { NavLink } from 'react-router';
 import { AuthContext } from '../Contest/ContestApi';
 import ThemeToggle from './ThemeToggle';
 import ThemeToggles from './FreeMotion';
-
+import profile from '../Nav/user.png'
 const Nav = () => {
     let { user, logOut } = useContext(AuthContext)
     let link = <>
         <NavLink to={'/'}>Home</NavLink>
-        <NavLink to={'/regi'}>Register</NavLink>
+        <NavLink to={'/regi'}>Registration</NavLink>
         <NavLink to={'/upcoming'}>Upcoming Events</NavLink>
         <NavLink to={'/creat'}>Creat an Events</NavLink>
         <NavLink to={"/Manageevent"}>Event Manage</NavLink>
@@ -61,16 +61,16 @@ return (
             <div className="w-10 rounded-full">
                 {
                     user ? (
-                        <div className="flex items-center gap-2">
+                        <div className="flex  items-center gap-2">
                             <img
                                 src={user.photoURL}
-                                alt="profile"
+                                alt={profile}
                                 title={user.displayName}
-                                className="w-10 h-10 rounded-full cursor-pointer"
+                                className="w-10 h-10 rounded-full bg-green-800 cursor-pointer"
                             />
                         </div>
                     ) : (
-                        <img src="../assets/download - Copy.png" alt="" />
+                        <img src={profile} alt='' />
                     )
                 }
 

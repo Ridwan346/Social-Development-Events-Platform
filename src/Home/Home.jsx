@@ -5,6 +5,7 @@ import creation from '../assets/creation.jpg'
 import discation from '../assets/discation.jpg'
 import discovary from '../assets/discovary.jpg'
 import Gallery from '../assets/Gallary/Gallery';
+import Footer from './Footer';
 
 const Home = () => {
     return (
@@ -68,6 +69,7 @@ const Home = () => {
          </dialog>
             </div>
            </div>
+           <div className='mt-5'><Footer></Footer></div>
     </div>
     );
 };

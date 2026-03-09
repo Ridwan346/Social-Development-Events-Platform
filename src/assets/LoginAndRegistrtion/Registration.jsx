@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { AuthContext } from '../../Contest/ContestApi';
 import { NavLink, useLocation, useNavigate } from 'react-router';
+import Swal from 'sweetalert2';
 
 const Registretion = () => {
     let { createUser, googleLogin, updateUserProfile } = useContext(AuthContext)
@@ -38,7 +39,8 @@ const Registretion = () => {
                     .catch(error => {
                         setError(error.message);
                     });
-                setSuccess(`Login successful as ${result.user.email}`);
+                setSuccess(`Account successful as ${result.user.email}`);
+                 Swal.fire("Account Created Successfully!");
             })
             .catch(error => { setError(error.message) })
 
@@ -55,9 +57,9 @@ const Registretion = () => {
                             <label className="label">Photo URL</label>
                             <input name="photo" type="text" className="input" placeholder="Photo URL" />
                             <label className="label">Email</label>
-                            <input name='email' type="email" className="input" placeholder="Email" />
+                            <input name='email' type="email" className="input" placeholder="Email" required />
                             <label className="label">Password</label>
-                            <input name='password' type="password" className="input" placeholder="Password" />
+                            <input name='password' type="password" className="input" placeholder="Password" required/>
                             <div><a className="link link-hover">Already have an account? <NavLink to={'/login'}>Login</NavLink></a></div>
                             {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
                             {success && <p className="text-green-500 text-sm mt-2">{success}</p>}
